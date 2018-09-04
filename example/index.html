@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Context Menu jQuery plugin" />
+    <meta name="author" content="GGaritaJ Gerardo Garita" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="X-Xss-Protection" content="'1; mode=block' always">
+    <meta http-equiv="X-Content-Type-Options" content="'nosniff' always">
+    <title>Context Menu jQuery plugin</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="css/contextMenu-1.0.css" rel="stylesheet" />
+    <link href="css/myStyle.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/contextMenu-1.0.js"></script>
+    <script src="js/myScript.js"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body>
+    <div id="mainContainer">
+
+        <!-- CONTENT : START -->
+        <div>
+            <table id="table1" class="table table-bordered table-condensed table-striped table-responsive">
+                <thead>
+                    <tr>
+                        <td>FIELD 1</td>
+                        <td>FIELD 2</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CONTENT 1</td>
+                        <td>CONTENT 2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            <ul id="list1">
+                <li title="option 1">Option 1</li>
+                <li title="option 2">Option 2</li>
+                <li title="option 3">Option 3</li>
+                <li title="option 4">Option 4</li>
+                <li title="option 5">Option 5</li>
+                <li title="option 6">Option 6</li>
+            </ul>
+        </div>
+
+        <div>
+            <img id="img1" alt="NO-PICTURE" src="https://norfipc.com/img/windows8/agregar-apagar-reiniciar-menu-contextual.jpeg" />
+        </div>
+        <!-- CONTENT : ENDS -->
+        <!-- CONTEXT MENU : STARTS -->
+        <div id="menu1" class="ggContextMenu">
+            <ul>
+                <li>
+                    <span>Option context 1</span>
+                </li>
+                <li>
+                    <span>Option context 2</span>
+                </li>
+                <li>
+                    <span>Option context 3</span>
+                </li>
+                <li>
+                    <span>Option context 4</span>
+                    <div>
+                        <ul>
+                            <li>Option context 4.1</li>
+                            <li>Option context 4.2</li>
+                            <li>Option context 4.3</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div id="menu2" class="ggContextMenu">
+            <ul>
+                <li>
+                    <span>Option context 1</span>
+                </li>
+                <li>
+                    <span>Option context 2</span>
+                </li>
+                <li>
+                    <span>Option context 3</span>
+                </li>
+                <li>
+                    <span>Option context 4</span>
+                    <div>
+                        <ul>
+                            <li>Option context 4.1</li>
+                            <li>Option context 4.2</li>
+                            <li>Option context 4.3</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- CONTEXT MENU : ENDS -->
+
+    </div>
+</body>
+</html>
