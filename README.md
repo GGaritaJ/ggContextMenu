@@ -5,4 +5,4 @@ Plugin based on jquery that allows you to add contextual options (mouse right cl
 
 Online example: https://jsfiddle.net/GGaritaJ/6fv8aqc4/3/
 
-More info: www.ggaritaj.com
+More info: www.ggaritaj.com info@ggaritaj.com
