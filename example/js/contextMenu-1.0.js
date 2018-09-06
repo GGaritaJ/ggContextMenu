@@ -13,17 +13,21 @@
             $(this).each(function () {
                 $(this).contextmenu(function (event) {
                     event.preventDefault();
-                    var x = event.clientX;
-                    var y = event.clientY;
                     var menuId = ("#" + $(event.currentTarget).attr("context-menu"));
-                    _ggShowContextMenu(menuId, x, y);
+                    $("div.ggContextMenu").removeClass("active").removeAttr("style");
+                    $(menuId).find(".active").removeClass("active");
+                    _ggRelocateMenu(menuId, event.clientX, event.clientY);
+                    $(menuId).addClass("active");
                 });
             });
             $("li.sub-level").on("click", function (event) {
-                var opts = $(this).find("div.sub-level");
+                var opts = $(this).find("div.sub-level")[0];
                 if (!$(opts).hasClass("active")) {
                     $(opts).addClass("active");
                     $(this).addClass("active");
+                    var menuId = ("#" + $(event.currentTarget).closest(".ggContextMenu").attr("id"));
+                    var pos = $(menuId).position();
+                    _ggRelocateMenu(menuId, pos.left, pos.top);
                 } else if (!($(this).find("div").find(event.target).length == 0)){
                     $(opts).addClass("active");
                     $(this).addClass("active");
@@ -49,8 +53,7 @@
             }, 1000);
         }
     };
-    function _ggShowContextMenu(menuId, x, y) {
-        $("div.ggContextMenu").removeClass("active").removeAttr("style");
+    function _ggRelocateMenu(menuId, x, y) {
         var screenW = $(window).width();
         var screenH = $(window).height();
         var menuW = $(menuId).width();
@@ -65,9 +68,9 @@
             x = x - menuW - 18;
             pos2 = "right";
         }
+        $(menuId).removeAttr("style");
         $(menuId).css(("border-" + pos1 + "-" + pos2 + "-radius"), "0px");
         $(menuId).css("top", (y + "px"));
         $(menuId).css("left", (x + "px"));
-        $(menuId).addClass("active");
-    };
+    }
 })(jQuery);
