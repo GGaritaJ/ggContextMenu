@@ -25,7 +25,7 @@
     <div id="mainContainer">
 
         <!-- CONTENT : START -->
-        <div>
+        <div id="table-container" context-menu="menu1">
             <table id="table1" class="table table-bordered table-condensed table-striped table-responsive">
                 <thead>
                     <tr>
@@ -42,7 +42,7 @@
             </table>
         </div>
 
-        <div>
+        <div id="list-container" context-menu="menu1">
             <ul id="list1">
                 <li title="option 1">Option 1</li>
                 <li title="option 2">Option 2</li>
@@ -53,57 +53,53 @@
             </ul>
         </div>
 
-        <div>
-            <img id="img1" alt="NO-PICTURE" src="https://norfipc.com/img/windows8/agregar-apagar-reiniciar-menu-contextual.jpeg" />
+        <div id="image-container">
+            <img id="img1" context-menu="menu2" alt="NO-PICTURE" src="https://norfipc.com/img/windows8/agregar-apagar-reiniciar-menu-contextual.jpeg" />
         </div>
         <!-- CONTENT : ENDS -->
         <!-- CONTEXT MENU : STARTS -->
         <div id="menu1" class="ggContextMenu">
-            <ul>
-                <li>
-                    <span>Option context 1</span>
-                </li>
-                <li>
-                    <span>Option context 2</span>
-                </li>
-                <li>
-                    <span>Option context 3</span>
-                </li>
-                <li>
-                    <span>Option context 4</span>
-                    <div>
-                        <ul>
-                            <li>Option context 4.1</li>
-                            <li>Option context 4.2</li>
-                            <li>Option context 4.3</li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
+            <label><span class="glyphicon glyphicon-menu-hamburger"></span>Context 1</label>
+            <div>
+                <ul>
+                    <li>
+                        <span class="glyphicon glyphicon-picture"></span><span>Option context 1</span>
+                    </li>
+                    <li>
+                        <span class="glyphicon glyphicon-user"></span><span>Option context 2</span>
+                    </li>
+                    <li>
+                        <span class="glyphicon glyphicon-cog"></span><span>Option context 3</span>
+                    </li>
+                </ul>
+            </div>
         </div>
 
         <div id="menu2" class="ggContextMenu">
-            <ul>
-                <li>
-                    <span>Option context 1</span>
-                </li>
-                <li>
-                    <span>Option context 2</span>
-                </li>
-                <li>
-                    <span>Option context 3</span>
-                </li>
-                <li>
-                    <span>Option context 4</span>
-                    <div>
-                        <ul>
-                            <li>Option context 4.1</li>
-                            <li>Option context 4.2</li>
-                            <li>Option context 4.3</li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
+            <div>
+                <ul>
+                    <li>
+                        <span>Option 1</span>
+                    </li>
+                    <li>
+                        <span>Option 2</span>
+                    </li>
+                    <li>
+                        <span>Option 3</span>
+                    </li>
+                    <li class="sub-level">
+                        <span>Option 4</span>
+                        <span class="glyphicon"></span>
+                        <div class="sub-level">
+                            <ul>
+                                <li>Option 4.1</li>
+                                <li>Option 4.2</li>
+                                <li>Option 4.3</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
         <!-- CONTEXT MENU : ENDS -->
 

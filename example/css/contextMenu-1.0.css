@@ -1,5 +1,5 @@
 ﻿/*/////////////////////////////////////////////
-// ggContextMenu        JS/CSS PlugIn V1.0   //
+//  ggContextMenu        JS/CSS PlugIn V1.0  //
 //  Developed by: Ing.Gerardo Garita J.      //
 //                FullStack Developer        //
 //  email:  info@ggaritaj.com                //
@@ -7,266 +7,111 @@
 //  last date:  friday, 2018-09-10           //
 /////////////////////////////////////////////*/
 
-.expandableContainer {
-    position: relative;
-}
-.expandableContainer img {
-    position: absolute;
-    -webkit-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-    cursor: pointer;
-    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s, width 0.3s, height 0.3s;
-    transition: transform 0.3s, opacity 0.3s, width 0.3s, height 0.3s;
-}
-.expandableContainer img.menu {
-    z-index: 100;
-    opacity: 1;
-    margin-left: -9px;
-    margin-top: -9px;
-    padding: 1px;
-    background: #fff;
-    border-radius: 25px;
-}
-.expandableContainer img.menu.active {
-    opacity: 0.8;
-    -webkit-transform: scale3d(0.8,0.8,1);
-    transform: scale3d(0.8,0.8,1);
-}
-.expandableContainer img.menu.active + .menuConverted img.option {
-    z-index: 110;
-}
-.expandableContainer img.menu.active + .menuConverted img {
-    z-index: 1000;
-    height: 32px;
-    width: 32px;
-}
-.expandableContainer img.menu.active + .menuConverted img:hover {
-    opacity: 0.9;
-    height: 37px !important;
-    width: 37px !important;
+.ggContextMenu {
+    font-family: Tahoma;
+    font-size: 14px;
+    display: none;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    position: fixed;
+    background-color: #f9f9f9;
+    padding: 9px;
+    max-width: 250px;
+    max-height: 400px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-div.expandableContainer.ten img.menu.active + .menuConverted img.option:nth-child(1) {
-    -webkit-transform: translate3d(0px, -66px, 0);
-    transform: translate3d(0px, -66px, 0);
-}
-div.expandableContainer.ten img.menu.active + .menuConverted img.option:nth-child(2) {
-    -webkit-transform: translate3d(35px, -50px, 0);
-    transform: translate3d(35px, -50px, 0);
-}
-div.expandableContainer.ten img.menu.active + .menuConverted img.option:nth-child(3) {
-    -webkit-transform: translate3d(60px, -21px, 0);
-    transform: translate3d(60px, -21px, 0);
-}
-div.expandableContainer.ten img.menu.active + .menuConverted img.option:nth-child(4) {
-    -webkit-transform: translate3d(60px, 20px, 0);
-    transform: translate3d(60px, 20px, 0);
-}
-div.expandableContainer.ten img.menu.active + .menuConverted img.option:nth-child(5) {
-    -webkit-transform: translate3d(35px, 50px, 0);
-    transform: translate3d(35px, 50px, 0);
-}
-div.expandableContainer.ten img.menu.active + .menuConverted img.option:nth-child(6) {
-    -webkit-transform: translate3d(0px, 65px, 0);
-    transform: translate3d(0px, 65px, 0);
-}
-div.expandableContainer.ten img.menu.active + .menuConverted img.option:nth-child(7) {
-    -webkit-transform: translate3d(-35px, 50px, 0);
-    transform: translate3d(-35px, 50px, 0);
-}
-div.expandableContainer.ten img.menu.active + .menuConverted img.option:nth-child(8) {
-    -webkit-transform: translate3d(-60px, 20px, 0);
-    transform: translate3d(-60px, 20px, 0);
-}
-div.expandableContainer.ten img.menu.active + .menuConverted img.option:nth-child(9) {
-    -webkit-transform: translate3d(-60px, -21px, 0);
-    transform: translate3d(-60px, -21px, 0);
-}
-div.expandableContainer.ten img.menu.active + .menuConverted img.option:nth-child(10) {
-    -webkit-transform: translate3d(-35px, -51px, 0);
-    transform: translate3d(-35px, -51px, 0);
-}
+    .ggContextMenu > label {
+        height: 25px;
+        width: 100%;
+        margin: 0px;
+        text-align: left;
+        color: #337ab7;
+        margin-bottom: 10px;
+    }
 
-div.expandableContainer.nine img.menu.active + .menuConverted img.option:nth-child(1) {
-    -webkit-transform: translate3d(0px, -55px, 0);
-    transform: translate3d(0px, -55px, 0);
-}
-div.expandableContainer.nine img.menu.active + .menuConverted img.option:nth-child(2) {
-    -webkit-transform: translate3d(35px, -40px, 0);
-    transform: translate3d(35px, -40px, 0);
-}
-div.expandableContainer.nine img.menu.active + .menuConverted img.option:nth-child(3) {
-    -webkit-transform: translate3d(55px, -5px, 0);
-    transform: translate3d(55px, -5px, 0);
-}
-div.expandableContainer.nine img.menu.active + .menuConverted img.option:nth-child(4) {
-    -webkit-transform: translate3d(45px, 32px, 0);
-    transform: translate3d(45px, 32px, 0);
-}
-div.expandableContainer.nine img.menu.active + .menuConverted img.option:nth-child(5) {
-    -webkit-transform: translate3d(20px, 55px, 0);
-    transform: translate3d(20px, 55px, 0);
-}
-div.expandableContainer.nine img.menu.active + .menuConverted img.option:nth-child(6) {
-    -webkit-transform: translate3d(-20px, 55px, 0);
-    transform: translate3d(-20px, 55px, 0);
-}
-div.expandableContainer.nine img.menu.active + .menuConverted img.option:nth-child(7) {
-    -webkit-transform: translate3d(-45px, 32px, 0);
-    transform: translate3d(-45px, 32px, 0);
-}
-div.expandableContainer.nine img.menu.active + .menuConverted img.option:nth-child(8) {
-    -webkit-transform: translate3d(-55px, -5px, 0);
-    transform: translate3d(-55px, -5px, 0);
-}
-div.expandableContainer.nine img.menu.active + .menuConverted img.option:nth-child(9) {
-    -webkit-transform: translate3d(-35px, -40px, 0);
-    transform: translate3d(-35px, -40px, 0);
-}
+    .ggContextMenu > div {
+        max-width: 250px;
+        max-height: 360px;
+        overflow: auto;
+    }
 
-div.expandableContainer.eight img.menu.active + .menuConverted img.option:nth-child(1) {
-    -webkit-transform: translate3d(23px, -45px, 0);
-    transform: translate3d(23px, -45px, 0);
-}
-div.expandableContainer.eight img.menu.active + .menuConverted img.option:nth-child(2) {
-    -webkit-transform: translate3d(50px, -20px, 0);
-    transform: translate3d(50px, -20px, 0);
-}
-div.expandableContainer.eight img.menu.active + .menuConverted img.option:nth-child(3) {
-    -webkit-transform: translate3d(50px, 20px, 0);
-    transform: translate3d(50px, 20px, 0);
-}
-div.expandableContainer.eight img.menu.active + .menuConverted img.option:nth-child(4) {
-    -webkit-transform: translate3d(23px, 45px, 0);
-    transform: translate3d(23px, 45px, 0);
-}
-div.expandableContainer.eight img.menu.active + .menuConverted img.option:nth-child(5) {
-    -webkit-transform: translate3d(-23px, 45px, 0);
-    transform: translate3d(-23px, 45px, 0);
-}
-div.expandableContainer.eight img.menu.active + .menuConverted img.option:nth-child(6) {
-    -webkit-transform: translate3d(-50px, 20px, 0);
-    transform: translate3d(-50px, 20px, 0);
-}
-div.expandableContainer.eight img.menu.active + .menuConverted img.option:nth-child(7) {
-    -webkit-transform: translate3d(-50px, -20px, 0);
-    transform: translate3d(-50px, -20px, 0);
-}
-div.expandableContainer.eight img.menu.active + .menuConverted img.option:nth-child(8) {
-    -webkit-transform: translate3d(-23px, -45px, 0);
-    transform: translate3d(-23px, -45px, 0);
-}
+    .ggContextMenu.active {
+        display: block;
+        box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 
+            0 1px 10px 0 rgba(0, 0, 0, .12), 
+            0 2px 4px -1px rgba(0, 0, 0, .2);
+    }
 
-div.expandableContainer.seven img.menu.active + .menuConverted img.option:nth-child(1) {
-    -webkit-transform: translate3d(0px, -50px, 0);
-    transform: translate3d(0px, -50px, 0);
-}
-div.expandableContainer.seven img.menu.active + .menuConverted img.option:nth-child(2) {
-    -webkit-transform: translate3d(40px, -30px, 0);
-    transform: translate3d(40px, -30px, 0);
-}
-div.expandableContainer.seven img.menu.active + .menuConverted img.option:nth-child(3) {
-    -webkit-transform: translate3d(45px, 10px, 0);
-    transform: translate3d(45px, 10px, 0);
-}
-div.expandableContainer.seven img.menu.active + .menuConverted img.option:nth-child(4) {
-    -webkit-transform: translate3d(25px, 45px, 0);
-    transform: translate3d(25px, 45px, 0);
-}
-div.expandableContainer.seven img.menu.active + .menuConverted img.option:nth-child(5) {
-    -webkit-transform: translate3d(-25px, 45px, 0);
-    transform: translate3d(-25px, 45px, 0);
-}
-div.expandableContainer.seven img.menu.active + .menuConverted img.option:nth-child(6) {
-    -webkit-transform: translate3d(-45px, 10px, 0);
-    transform: translate3d(-45px, 10px, 0);
-}
-div.expandableContainer.seven img.menu.active + .menuConverted img.option:nth-child(7) {
-    -webkit-transform: translate3d(-40px, -30px, 0);
-    transform: translate3d(-40px, -30px, 0);
-}
+    .ggContextMenu ul {
+        list-style-type:none;
+    }
 
-div.expandableContainer.six img.menu.active + .menuConverted img.option:nth-child(1) {
-    -webkit-transform: translate3d(0px, -50px, 0);
-    transform: translate3d(0px, -50px, 0);
-}
-div.expandableContainer.six img.menu.active + .menuConverted img.option:nth-child(2) {
-    -webkit-transform: translate3d(45px, -20px, 0);
-    transform: translate3d(45px, -20px, 0);
-}
-div.expandableContainer.six img.menu.active + .menuConverted img.option:nth-child(3) {
-    -webkit-transform: translate3d(45px, 25px, 0);
-    transform: translate3d(45px, 25px, 0);
-}
-div.expandableContainer.six img.menu.active + .menuConverted img.option:nth-child(4) {
-    -webkit-transform: translate3d(0px, 50px, 0);
-    transform: translate3d(0px, 50px, 0);
-}
-div.expandableContainer.six img.menu.active + .menuConverted img.option:nth-child(5) {
-    -webkit-transform: translate3d(-45px, 25px, 0);
-    transform: translate3d(-45px, 25px, 0);
-}
-div.expandableContainer.six img.menu.active + .menuConverted img.option:nth-child(6) {
-    -webkit-transform: translate3d(-45px, -20px, 0);
-    transform: translate3d(-45px, -20px, 0);
-}
+    .ggContextMenu > div > ul {
+        padding:0px;
+        margin:0px;
+    }
 
-div.expandableContainer.five img.menu.active + .menuConverted img.option:nth-child(1) {
-    -webkit-transform: translate3d(0px, -50px, 0);
-    transform: translate3d(0px, -50px, 0);
-}
-div.expandableContainer.five img.menu.active + .menuConverted img.option:nth-child(2) {
-    -webkit-transform: translate3d(50px, -20px, 0);
-    transform: translate3d(50px, -20px, 0);
-}
-div.expandableContainer.five img.menu.active + .menuConverted img.option:nth-child(3) {
-    -webkit-transform: translate3d(35px, 40px, 0);
-    transform: translate3d(35px, 40px, 0);
-}
-div.expandableContainer.five img.menu.active + .menuConverted img.option:nth-child(4) {
-    -webkit-transform: translate3d(-35px, 40px, 0);
-    transform: translate3d(-35px, 40px, 0);
-}
-div.expandableContainer.five img.menu.active + .menuConverted img.option:nth-child(5) {
-    -webkit-transform: translate3d(-50px, -20px, 0);
-    transform: translate3d(-50px, -20px, 0);
-}
+    .ggContextMenu > div > ul > li:not(:last-child) {
+        border-bottom: 1px solid #ddd;
+    }
 
-div.expandableContainer.four img.menu.active + .menuConverted img.option:nth-child(1) {
-    -webkit-transform: translate3d(40px, -35px, 0);
-    transform: translate3d(40px, -35px, 0);
+.ggContextMenu li {
+    margin-bottom: 10px;
+    min-width: 100px;
 }
-div.expandableContainer.four img.menu.active + .menuConverted img.option:nth-child(2) {
-    -webkit-transform: translate3d(40px, 35px, 0);
-    transform: translate3d(40px, 35px, 0);
-}
-div.expandableContainer.four img.menu.active + .menuConverted img.option:nth-child(3) {
-    -webkit-transform: translate3d(-40px, 35px, 0);
-    transform: translate3d(-40px, 35px, 0);
-}
-div.expandableContainer.four img.menu.active + .menuConverted img.option:nth-child(4) {
-    -webkit-transform: translate3d(-40px, -35px, 0);
-    transform: translate3d(-40px, -35px, 0);
-}
+    .ggContextMenu li:last-child {
+        margin-bottom: 0px;
+    }
 
-div.expandableContainer.three img.menu.active + .menuConverted img.option:nth-child(1) {
-    -webkit-transform: translate3d(0px, -50px, 0);
-    transform: translate3d(0px, -50px, 0);
-}
-div.expandableContainer.three img.menu.active + .menuConverted img.option:nth-child(2) {
-    -webkit-transform: translate3d(45px, 25px, 0);
-    transform: translate3d(45px, 25px, 0);
-}
-div.expandableContainer.three img.menu.active + .menuConverted img.option:nth-child(3) {
-    -webkit-transform: translate3d(-45px, 25px, 0);
-    transform: translate3d(-45px, 25px, 0);
-}
 
-div.expandableContainer.two img.menu.active + .menuConverted img.option:nth-child(1) {
-    -webkit-transform: translate3d(-55px, 1px, 0);
-    transform: translate3d(-55px, 1px, 0);
-}
-div.expandableContainer.two img.menu.active + .menuConverted img.option:nth-child(2) {
-    -webkit-transform: translate3d(55px, 1px, 0);
-    transform: translate3d(55px, 1px, 0);
-}
+        .ggContextMenu li:hover {
+            color: #e88d00;
+            cursor: pointer;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+
+        .ggContextMenu li ul li:hover {
+            color: #149717;
+        }
+
+    .ggContextMenu label span.glyphicon {
+        margin-right: 5px;
+        padding-right: 5px;
+        font-size: 18px;
+    }
+
+    .ggContextMenu li span.glyphicon {
+        margin-right: 5px;
+        padding-right: 5px;
+        font-size: 18px;
+        border-right: 1px solid #ddd;
+    }
+
+    .ggContextMenu ul li div.sub-level {
+        display: none;
+        margin-top: 10px;
+    }
+    .ggContextMenu ul li div.sub-level.active {
+        display: block;
+    }
+
+    .ggContextMenu ul li.sub-level span.glyphicon {
+        border-right: 0px;
+        float: right;
+        font-size: 14px;
+        margin: 0px;
+    }
+    .ggContextMenu ul li.sub-level span.glyphicon:before {
+        content: "\e080";
+    }
+    .ggContextMenu ul li.sub-level.active span.glyphicon:before {
+        content: "\e113";
+    }
