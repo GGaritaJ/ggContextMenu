@@ -5,9 +5,7 @@ Plugin based on jquery that allows you to add contextual options (mouse right cl
 
 Usage:
 ```javascript
-$(document).ready(function () {
-    $("[context-menu]").ggContextMenu();
-});
+$("[context-menu]").ggContextMenu();
 ```
 
 Online example: https://jsfiddle.net/GGaritaJ/6fv8aqc4/3/
