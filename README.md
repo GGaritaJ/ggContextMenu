@@ -1,5 +1,5 @@
 # ggContextMenu
-jQuery plugin ggContextMenu v1.0 -developed by GGaritaJ: Gerardo Garita-
+jQuery plugin ggContextMenu -developed by GGaritaJ: Gerardo Garita-
 
 Plugin based on jquery that allows you to add contextual options (mouse right click) to elements of the DOM. 
 

@@ -1,5 +1,5 @@
 ﻿///////////////////////////////////////////////
-//  ggContextMenu        JS/CSS PlugIn V1.0  //
+//  ggContextMenu        JS/CSS PlugIn V1.1  //
 //  Developed by: Ing.Gerardo Garita J.      //
 //                FullStack Developer        //
 //  email:  info@ggaritaj.com                //
@@ -41,6 +41,10 @@
                     $("div.ggContextMenu").removeClass("active").removeAttr("style");
                     $("div.sub-level, li.sub-level").removeClass("active").removeAttr("style");
                 }
+            });
+            $(document).scroll(function (event) {
+                $("div.ggContextMenu").removeClass("active").removeAttr("style");
+                $("div.ggContextMenu div.sub-level, div.ggContextMenu li.sub-level").removeClass("active").removeAttr("style");
             });
             console.log("gg:context menu ready!");
         }
